@@ -1,0 +1,42 @@
+/* header and footer tag */
+header,footer {
+    width: 100%;
+    padding: 0 26px;
+    position: absolute;
+    height: 90px;
+    background: linear-gradient(135deg,#29aae2,#1b4ea1);
+}
+/* image logo dimensions */
+.logo,a,img{
+    float: left;
+    height: 100px;
+    margin-right: 50px;
+}
+/* search input */
+.search{
+    margin: 35px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+/* signin and register specifications */
+.signin, .register{
+    padding: 40px;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+/* user option */
+select{
+   margin: 40px;
+}
+/* information to user about news breeze */
+.announcement{
+    background: linear-gradient(135deg,#29aae2,#1b4ea1);
+    width: 100%;
+    height: 200px;
+    padding: 0 26px;
+    padding-top: 200px;
+    color: white;
+    font-size: 26px;
+    font-family: sans-serif;
+}
