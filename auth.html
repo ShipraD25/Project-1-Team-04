@@ -4,30 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auth with Firebase</title>
-    <script src="auth.js"></script>
+    <title>Auth with Firebase</title> 
 </head>
 <body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
-    authDomain: "projectone-cbac5.firebaseapp.com",
-    databaseURL: "https://projectone-cbac5.firebaseio.com",
-    projectId: "projectone-cbac5",
-    storageBucket: "projectone-cbac5.appspot.com",
-    messagingSenderId: "31129312771",
-    appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+
 
     <div class="container">
         <input id="txtEmail" type="email" placeholder="Email">
@@ -48,6 +30,32 @@
 
     </div>
 
-    
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
+          authDomain: "projectone-cbac5.firebaseapp.com",
+          databaseURL: "https://projectone-cbac5.firebaseio.com",
+          projectId: "projectone-cbac5",
+          storageBucket: "projectone-cbac5.appspot.com",
+          messagingSenderId: "31129312771",
+          appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
+        };
+      
+        // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//make auth and firestore reference
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+//update firestore settings
+//db.setting({timestampsINSnapshots: true});
+</script>
+<script src="auth.js"></script>
 </body>
 </html>
