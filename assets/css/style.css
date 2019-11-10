@@ -34,14 +34,14 @@ select{
     background: #f1f3f5;
     text-align: center;
     color: #333e4f;
-    width: 100%;
+    width: 960px;
     height: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 60px;
+    margin: 40px 0px 40px 60px;
     padding-right:20px;
     min-height: 100px;
-    padding-top: 10px;
+    padding: 10px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* read more styling */
 .read{
@@ -71,14 +71,21 @@ select{
 a{
     height: 30px;
 }
-.stories{
-    width: 960px;
-    padding: 10px;
-    text-align: left;
-    margin-bottom: 5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 .title-box{
     text-align: center;
     margin-bottom: 30px;
+}
+/* Can combine this with overflow-hidden to make background images grow on hover
+ * even if you are using background-size: cover */
+
+.grow {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.grow:hover,
+.grow:focus {
+  transform: scale(1.05);
 }
