@@ -30,9 +30,26 @@
     const auth = firebase.auth();
     //sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
+    database.ref().set({
+        email: email,
+        password: pass,
+      });
     //promise.catch(e => console.log(e.message));
-    //$("#loginState").html("<br>you are now signed up!");
-
+    $("#loginState").append("<br>One user is now signed up!");
+    //console.log(firebaseUser.uid)
+    //async function createNewAccount() {
+    //    try {
+    //        const firebaseUser = await firebase.auth().createUserWithEmailAndPassword(email, password);
+    //        console.log(firebaseUser.uid)
+    //        database.ref().set({
+    //            email: email,
+    //            password: pass,
+    //          });
+    //    } catch (error) {
+    //        console.log(error.message)
+    //    }
+    //}    
+    
 });
 
 //add a logout fucntion
@@ -47,16 +64,39 @@ btnLogout.addEventListener("click", e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         console.log("state change, login is successful");
-        console.log(firebaseUser);
+        console.log("firebaseUser is: " + firebaseUser);
+        console.log("firebaseUser email is: " + firebaseUser.email);
+        console.log("firebaseUser uid is: " + firebaseUser.uid);
         //make logout btn visiable after user login
         btnLogout.classList.remove("hide");
-        $("#loginState").html("<br>you have now login!");
-        
+        $("#loginState").append("<br>One user is now login!");
+        //var user = firebase.auth().currentUser;
+        //console.log(user);
+        //console.log("all login users are " + user);
+        //writeUserData(firebaseUser);
     } else {
         console.log("state change, Not log in");
         //make logout btn invisiable if user not login
         btnLogout.classList.add("hide");
-        $("#loginState").html("<br>you are not login!");
+        $("#loginState").append("<br>One user is now logout!");
 
     }
 });
+
+
+//function writeUserData(firebaseUser) {
+//    database.ref('firebaseUser/' + firebaseUser.uid).set(firebaseUser).catch(error => {
+//        console.log(error.message)
+//    });
+//}
+
+
+//get current users
+//var user = firebase.auth().currentUser;
+//if (user) {
+    // User is signed in.
+ //   console.log("user is login " + user);
+ // } else {
+    // No user is signed in.
+  //  console.log("user is not login " + user);
+ // }

@@ -32,12 +32,13 @@
     </div>
 
     <div id="loginState"> 
-        <p>login state</p>
+        <p></p>
     </div>
 
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -52,7 +53,7 @@
       
         // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
+var database = firebase.database();
 //make auth and firestore reference
 const auth = firebase.auth();
 const db = firebase.firestore();
