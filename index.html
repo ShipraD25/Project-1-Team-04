@@ -52,6 +52,7 @@
             <option value="14">14</option>
             <option value="15">15</option>
         </select>
+       
     </nav>
 </header>
 <div class="header-ext">
@@ -167,10 +168,20 @@
 <script>
 //Populate the home page with headlines
 //Using the headlines query url, this is for only the population of the home page
-$(document).ready (function(){
-        var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=349152e2740748f4b23c31609ae25dae";
-    
-    $.ajax({
+
+var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=10&apiKey=349152e2740748f4b23c31609ae25dae";
+
+
+
+
+
+$(document).ready (function(){       
+   query();
+    });
+
+    function query(){
+        
+        $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response){
@@ -184,12 +195,11 @@ var title = results[i].title;
 console.log(title);
 var content = results[i].description; //brief description of the news
 var newsUrl = results[i].url; //link to the news on the news site
-var imageUrl = results[i].urlToImage;
+var imageUrl = results[i].urlToImage; //link to the news image;
 console.log("URL: ",newsUrl);
 console.log("Brief Description: ", content);
 console.log("Image URL: ",imageUrl)
 var myCol = $('<div class="grow col-sm-3 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
-// var myCard =$('<div class="card" id="'+i+'Panel"><div class="card-body"><div class="card-title"><span>'+title+'</span><button type ="button" class="close" data-target="'+i+'Panel" data-dismiss="alert"><span class="float-right"><i class ="fa fa-remove"></i></span></button></div><p class="card-text">'+content+'</p></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div>')
 var card = $('<div class="card " id="'+i+'col"><div class="card-body>');
 var cardHeader = $('<div class="card-header bg-secondary"><img src="'+imageUrl+'" class="card-img-top"></div>')
 // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
@@ -204,7 +214,7 @@ cardHeader.append(cardTitle);
 cardTitle.append(cardText);
 cardText.append(readMore);
 myCol.append(card);
-$("#main-content").append(myCol);
+$(".row").append(myCol);
 
 $('.close').on('click', function(e){
       e.stopPropagation();  
@@ -218,7 +228,7 @@ window.open(newsUrl,'_blank');
 })
 }
   });
-    });
+    }
 
 </script>
 
