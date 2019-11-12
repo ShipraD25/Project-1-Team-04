@@ -19,15 +19,15 @@ footer {
     font-family: sans-serif;
 }
 /* signin and register specifications */
-.signin, .register{
-    padding: 40px;
+.signin, .register, .logOut{
+    padding: 30px;
     color: white;
     font-size: 16px;
     font-family: sans-serif;
 }
 /* user option */
 select{
-   margin: 40px;
+   margin: 20px;
 }
 /* main news display in the page */
 .stories{
@@ -62,14 +62,14 @@ select{
     font-family: sans-serif;
 }
 .action-container {
-    height: 40px;
+    height: 60px;
     flex: 0 0 auto;
     padding: 0 16px 1px;
     margin-top: 8px;
     position: relative;
 }
 a{
-    height: 30px;
+    height: 20px;
 }
 .title-box{
     text-align: center;
@@ -88,4 +88,19 @@ a{
 .grow:hover,
 .grow:focus {
   transform: scale(1.05);
+}
+/* Submit button */
+.button{
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 10px;
+
+}
+/* styling the cards */
+.card{
+    margin:10px;
+    background: white;
+    border: none;
 }

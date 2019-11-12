@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>News Breeze</title>
+    <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- css link -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <!-- font awesome  link -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- bootstrap link -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
     <!-- tachyons link -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
 
@@ -53,6 +58,7 @@
             <option value="14">14</option>
             <option value="15">15</option>
         </select>
+        <button class= "button" type="submit">Submit</button>
     </nav>
 </header>
 <div class="header-ext">
@@ -68,61 +74,27 @@
     <div class="title-box">
         <h2>Today's top Stories </h2>
     </div>
-    <!-- dynamic code generated using javascript -->
     <div class="container">
             <div class="row">
-              <div class="grow col-sm-3 col-md-3 col-xs-12">
-                <!-- <img class="article" src=""> -->
-                <h3>Column1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <div>
-                    <span class="read">
-                        <a class= "read" href="">Read more..</a>
-                    </span>
-                </div>
-                <div class="action-container">
-                    <a href="" class="far fa-bookmark"></a>
-                    <a href="" class="far fa-share-square"></a>
-                </div>
-              </div>
-              <div class="grow col-sm-3 col-md-3 col-xs-12">
-                <!-- <img class="article" src=""> -->
-                <h3>Column2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <div>
-                    <span class="read">
-                        <a class= "read" href="">Read more..</a>
-                    </span>
-                </div>
-                <div class="action-container">
-                    <a href="" class="far fa-bookmark"></a>
-                    <a href="" class="far fa-share-square"></a>
-                </div>
-              </div>
-              <div class="grow col-sm-3 col-md-3 col-xs-12">
-                <!-- <img class="article"src="">       -->
-                <h3>Column3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <div>
-                    <span class="read">
-                        <a class= "read" href="">Read more..</a>
-                    </span>
-                </div>
-                <div class="action-container">
-                    <a href="" class="far fa-bookmark"></a>
-                    <a href="" class="far fa-share-square"></a>
-                </div>
-              </div>
-              <div class="grow col-sm-3 col-md-3 col-xs-12">
-                <h3>Weather</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <h3>Pollen</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                <!-- dynamic code generated using javascript -->
+              <div class="grow col-sm-3 col-md-3 col-xs-12 style='position:fixed'">
+                  <div class="card">
+                      
+                    <div class="card-header">
+                        <h3>Weather</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                    </div>  
+                    <div class="card-header">
+                            <h3>Pollen</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                        </div>  
+                  </div>
 
               </div>
             </div>
@@ -167,8 +139,13 @@
                 <option value="14">14</option>
                 <option value="15">15</option>
             </select>
+            <button class= "button" type="submit">Submit</button>
         </nav>
     </footer>  
-   
+    
+   <!-- JavaScript -->
+   <script type="text/javascript" src="assets/javascript/moment.js"></script>
+   <!-- Link to Moment.js should go here -->
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </body>
 </html>
