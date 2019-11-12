@@ -5,104 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <link href="style.css" rel="stylesheet" />
-
-
+    <title>News Breeze</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <!-- font awesome  link -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">
-                <img src="logo.png" alt="News Breeze">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Personalise<span class="sr-only">(current)</span></a>
-                    </li>
+    <!--trying Jumbutron-->
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+    <div class="jumbotron">
+        <!-- <div class="logo"> 
+        <a href="index.html">
+            <img src="assets/images/logo.png" alt="News Breeze">
+        </a> 
+    </div> -->
+        <!-- nav box has search box, signin or register for the first time which leads to a different page
+    and  option dropdown to select how many articles should be displayed from 1-15
+    default is 5  -->
+        <nav class="nav-box">
+            <input class="search" id="search" placeholder="search">
+
+            <a class="signin" href="login.html">Sign in</a>
+            <a class="register" href="register.html">Register</a>
+            <select id="select"> 
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+        </select>
+            <button type="submit"><i id="submit"></i></button>
         </nav>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="single-blog">
-                    <img src="https://tawonga-f9pdf2erdsnuf4sjh5b.netdna-ssl.com/wp-content/uploads/2018/11/huffpost-logo-1.png" alt="News">
-                    <p class="blog-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus perferendis, delectus praesentium nobis laborum commodi atque ex adipisci dicta? Illo ipsa sapiente qui reprehenderit quos. Autem id cum pariatur ratione</p>
-                    <p><a href="" class="read-more-btn">read more</a></p>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="single-blog">
-                    <img src="https://www.pngfind.com/pngs/m/72-725518_cnn-international-logo-png-cnn-news-logo-png.png" alt="News">
-                    <p class="blog-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea consequuntur, minima sapiente dignissimos ad repellat obcaecati recusandae dolores at nesciunt blanditiis aut quidem ipsum? Expedita delectus unde ea dicta illo.</p>
-                    <p><a href="" class="read-more-btn">read more</a></p>
-                </div>
-            </div>
-
-
-            <div class="col-md-4">
-                <div class="single-blog">
-                    <img src="http://pluspng.com/img-png/nytimes-logo-png-new-york-times-logo-1250.png" alt="News">
-                    <p class="blog-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus perferendis, delectus praesentium nobis laborum commodi atque ex adipisci dicta? Illo ipsa sapiente qui reprehenderit quos. Autem id cum pariatur ratione</p>
-                    <p><a href="" class="read-more-btn">read more</a></p>
-                </div>
+        </header>
+        <div class="header-ext">
+            <div class="announcement">
+                News Breeze let's you pick the news from specific sites and also share and personalize your favourite articles.
             </div>
         </div>
     </div>
-</body>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-</html>
 
-<!--<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>News Breeze</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-    <header>
-        <!-- Displays the logo in the front page 
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.png" alt="News Breeze">
-            </a>
+    <!-- main content of the news breeze page-->
+    <div class="stories">
+        <div class="title-box">
+            <h2>Today's top Stories </h2>
         </div>
+        <!-- dynamic code generated using javascript -->
+        <div class="container">
+            <div class="row" id="main-content">
+                <!-- <div class=" grow col-sm-3 col-md-3 col-xs-12" id="col0">
+                 <img class="article" src=""> 
+                
+                 <div>
+                    <span class="read">
+                        <a class= "read" href="">Read more..</a>
+                    </span>
+                </div>
+                <div class="action-container">
+                    <a href="" class="far fa-bookmark"></a>
+                    <a href="" class="far fa-share-square"></a>
+                </div>
+              </div> 
+              <div class="grow col-sm-3 col-md-3 col-xs-12">
+                 <img class="article" src="">
+                
+                <div>
+                    <span class="read">
+                        <a class= "read" href="">Read more..</a>
+                    </span>
+                </div>
+                <div class="action-container">
+                    <a href="" class="far fa-bookmark"></a>
+                    <a href="" class="far fa-share-square"></a>
+                </div>
+              </div> 
+              <div class="col-sm-3 col-md-3 col-xs-12">
+                <img class="article"src="">      
+                
+                <div>
+                    <span class="read">
+                        <a class= "read" href="">Read more..</a>
+                    </span>
+                </div>
+                <div class="action-container">
+                    <a href="" class="far fa-bookmark"></a>
+                    <a href="" class="far fa-share-square"></a>
+                </div> -->
+            </div>
+            <div class="col-sm-3 col-md-3 col-xs-12">
+                <h3>Weather</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                <h3>Pollen</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+    </div>
+
+
+
+    <!-- footer is same as header -->
+    <footer>
+        <!-- Displays the logo in the front page -->
+        <!-- <div class="logo"> 
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div> -->
         <!-- nav box has search box, signin or register for the first time which leads to a different page
         and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  
+        default is 5  -->
         <nav class="nav-box">
             <input class="search" placeholder="search">
-            <span class="signin">Sign in</span>
-            <span class="register">Register</span>
+            <a class="signin" href="login.html">Sign in</a>
+            <a class="register" href="register.html">Register</a>
             <select> 
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -121,63 +160,43 @@
                 <option value="15">15</option>
             </select>
         </nav>
-    </header>
-    <div class="header-ext">
-        <div class="announcement">
-            News Breeze let's you pick the news from specific sites and also share and personalize your favourite articles.
-        </div>
-    </div>
-
-    <!-- main content of the news breeze page
-    <div class="stories">
-        <div class="title-box">
-            <h2>Today's top Stories </h2>
-        </div>
-    </div>-->
-
-
-
-
-
-
-
-<!-- footer is same as header 
-<footer>
-    <!-- Displays the logo in the front page 
-    <div class="logo">
-        <a href="index.html">
-            <img src="logo.png" alt="News Breeze">
-        </a>
-    </div>
-    <!-- nav box has search box, signin or register for the first time which leads to a different page
-        and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  
-    <nav class="nav-box">
-        <input class="search" placeholder="search">
-        <span class="signin">Sign in</span>
-        <span class="register">Register</span>
-        <select> 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
-    </nav>
-</footer>
+    </footer>
 
 </body>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script>
+    //Populate the home page with headlines
+    //Using the headlines query url, this is for only the population of the home page
+    $(document).ready(function() {
+        var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=349152e2740748f4b23c31609ae25dae";
 
-</html>-->
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            var results = response.articles;
+            console.log(results);
+            for (var i = 0; i < results.length; i++) {
+                var title = results[i].title;
+                console.log(title);
+                var content = results[i].description;
+                console.log(content);
+                var myCol = $('<div class="col-sm-3 col-md-3 col-xs-12" id="col' + i + '"></div>'); //make a column
+                // var myCard =$('<div class="card" id="'+i+'Panel"><div class="card-body"><div class="card-title"><span>'+title+'</span><button type ="button" class="close" data-target="'+i+'Panel" data-dismiss="alert"><span class="float-right"><i class ="fa fa-remove"></i></span></button></div><p class="card-text">'+content+'</p></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div>')
+                var card = $('<div class="card" id="' + i + 'col"><div class="card-body>');
+                var cardHeader = $('<div class="card-header"><h5 class="card-title">').text(title);
+                var cardText = $('<div class="card-text">').text(content);
+                cardHeader.append(cardText);
+                card.append(cardHeader)
+                myCol.append(card);
+                $("#main-content").append(myCol);
+                $('.close').on('click', function(e) {
+                    e.stopPropagation();
+                    var $target = $(this).parents('.col-sm-3');
+                    $target.hide('slow', function() {
+                        $target.remove();
+                    });
+                });
+            }
+        });
+    });
+</script>
