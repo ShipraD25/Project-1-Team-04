@@ -22,7 +22,8 @@
     //promise.catch(e => console.log(e.message));
     //promise.catch(e => console.log("promise catch, login successfully"));
     //promise.catch(e => window.location = 'home.html');
-    x.style.display = "block";
+    //x.style.display = "block";
+    //myFunction();
   });
 
   //add signup event
@@ -66,6 +67,7 @@ btnLogout.addEventListener("click", e => {
     console.log("logout clicked");
     x.style.display = "none";
     //window.location = 'auth.html';
+    //myFunction();
 });
 
 var x = document.getElementById("myDIV");
@@ -84,14 +86,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         //console.log(user);
         //console.log("all login users are " + user);
         //writeUserData(firebaseUser);
-        
+        x.style.display = "block";
+        console.log(firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION));
 
     } else {
         console.log("state change, Not log in");
         //make logout btn invisiable if user not login
         btnLogout.classList.add("hide");
+        x.style.display = "none";
         $("#loginState").append("<br>One user is now logout!");
-        
 
     }
 });
@@ -117,9 +120,27 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
  //hide an element if user is not login
  function myFunction() {
     var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
+    if (firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION) != null && x.style.display === "none") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
     }
   }
+
+//try to use authentication state as a variable 
+
+
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return firebase.auth().signInWithEmailAndPassword(email, pass);
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
