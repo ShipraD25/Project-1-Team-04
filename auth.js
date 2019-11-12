@@ -44,7 +44,7 @@
     //  });
 
     //promise.catch(e => console.log(e.message));
-    $("#loginState").append("<br>One user is now signed up!");
+    $("#loginState").html("<br>One user is now signed up!");
     //console.log(firebaseUser.uid)
     //async function createNewAccount() {
     //    try {
@@ -71,6 +71,9 @@ btnLogout.addEventListener("click", e => {
 });
 
 var x = document.getElementById("myDIV");
+var y = document.getElementById("btnLogout");
+//var time = moment().toDate();
+
 
 //add a realtiem lister for auth state change
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -81,12 +84,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log("firebaseUser uid is: " + firebaseUser.uid);
         //make logout btn visiable after user login
         btnLogout.classList.remove("hide");
-        $("#loginState").append("<br>One user is now login!");
+        $("#loginState").html("<br>user is now login!");
         //var user = firebase.auth().currentUser;
         //console.log(user);
         //console.log("all login users are " + user);
         //writeUserData(firebaseUser);
         x.style.display = "block";
+        //y.style.display = "block";
         console.log(firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION));
 
     } else {
@@ -94,7 +98,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         //make logout btn invisiable if user not login
         btnLogout.classList.add("hide");
         x.style.display = "none";
-        $("#loginState").append("<br>One user is now logout!");
+        //y.style.display = "block";
+        $("#loginState").html("<br>user is now logout!");
 
     }
 });
