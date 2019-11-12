@@ -184,14 +184,17 @@ var title = results[i].title;
 console.log(title);
 var content = results[i].description;
 
+var newsUrl = results[i].url;
+console.log("URL: ",newsUrl);
+
 console.log(content);
 var myCol = $('<div class="grow col-sm-3 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
 // var myCard =$('<div class="card" id="'+i+'Panel"><div class="card-body"><div class="card-title"><span>'+title+'</span><button type ="button" class="close" data-target="'+i+'Panel" data-dismiss="alert"><span class="float-right"><i class ="fa fa-remove"></i></span></button></div><p class="card-text">'+content+'</p></div><div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div></div>')
-var card = $('<div class="card" id="'+i+'col"><div class="card-body>');
-var cardHeader = $('<div class="card-header"><b>').text(title);
+var card = $('<div class="card " id="'+i+'col"><div class="card-body>');
+var cardHeader = $('<div class="card-header bg-secondary "></div><b>').text(title);
 var cardBody= $('<div class="card-body">');
 var cardText = $ ('<div class="card-text">').text(content);
-var readMore = $('<div><span class="read"><a class= "read" href="">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a><a href="" class="far fa-share-square"></a></div>');
+var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a><a href="" class="far fa-share-square"></a></div>');
 cardHeader.append(cardBody);
 card.append(cardHeader);
 cardBody.append(cardText);
@@ -204,6 +207,11 @@ $('.close').on('click', function(e){
           var $target = $(this).parents('.col-sm-3');
           $target.hide('slow', function(){ $target.remove(); });
     });
+
+$(".read").click(function(e){
+    e.stopPropagation(); 
+window.open(newsUrl,'_blank');
+})
 }
   });
     });
