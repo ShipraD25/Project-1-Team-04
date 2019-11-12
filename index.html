@@ -133,44 +133,14 @@
 
 <!-- footer is same as header -->
 <footer>
-        <!-- Displays the logo in the front page -->
-        <!-- <div class="logo"> 
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="News Breeze">
-            </a> 
-        </div> -->
-        <!-- nav box has search box, signin or register for the first time which leads to a different page
-        and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  -->
-         <nav class="nav-box">
-            <input class="search" placeholder="search">
-            <a class="signin" href="./auth.html">Sign in</a>
-        <a class="register" href="register.html">Register</a>
-            <select> 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
-        </nav>
-    </footer>  
+    <h3 align="center">Visitors have clicked on news tiles <span id="click-value" style="color:red;"></span> times!</h3>
+</footer>  
 
     
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
 <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -189,7 +159,43 @@ var database = firebase.database();
 //make auth and firestore reference
 const auth = firebase.auth();
 const db = firebase.firestore();
-    
+
+//counter when user click on any part of the main content
+var clickCounter = 0;
+
+$("#main-content").on("click", function() {
+
+// Add to clickCounter
+clickCounter++;
+
+//  Store Click Data to Firebase in a JSON property called clickCount
+// Note how we are using the Firebase .set() method
+database.ref().set({
+  clickCount: clickCounter
+});
+});
+
+//counter snapshot codes
+database.ref().on("value", function(snapshot) {
+
+// Then we console.log the value of snapshot
+console.log(snapshot.val());
+
+// Update the clickCounter variable with data from the database.
+clickCounter = snapshot.val().clickCount;
+
+// Then we change the html associated with the number.
+$("#click-value").text(clickCounter);
+
+// If there is an error that Firebase runs into -- it will be stored in the "errorObject"
+// Again we could have named errorObject anything we wanted.
+}, function(errorObject) {
+
+// In case of error this will print the error
+console.log("The read failed: " + errorObject.code);
+});
+
+
 //update firestore settings
 //db.setting({timestampsINSnapshots: true});
 </script>
