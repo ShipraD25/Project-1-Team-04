@@ -32,7 +32,7 @@
     and  option dropdown to select how many articles should be displayed from 1-15
     default is 5  -->
      <nav class="nav-box">
-        <input class="search" placeholder="search">
+        <input class="search"  placeholder="search">
         <a class="signin" href="login.html">Sign in</a>
         <a class="register" href="register.html">Register</a>
         <select> 
@@ -169,7 +169,7 @@
 //Populate the home page with headlines
 //Using the headlines query url, this is for only the population of the home page
 
-var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=10&apiKey=349152e2740748f4b23c31609ae25dae";
+var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=10&q=&apiKey=349152e2740748f4b23c31609ae25dae";
 
 
 
@@ -178,6 +178,16 @@ var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general
 $(document).ready (function(){       
    query();
     });
+
+$("#submit").click(function(){
+
+    var search = $("#search").val().trim();
+    console.log("SearchTerm: ",search);
+    queryURL ="https://newsapi.org/v2/everything?pageSize=10&q="+search+"&apiKey=349152e2740748f4b23c31609ae25dae";
+    console.log("Query URL : ",queryURL);
+    $(".row").empty();
+    query();
+});
 
     function query(){
         
