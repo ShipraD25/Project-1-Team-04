@@ -1,3 +1,5 @@
+//const database = firebase.database()
+//const createUser = user => database.ref().child(`User/${user.uid}`).set(user)
 
 
   //get elements from the DOM
@@ -20,6 +22,7 @@
     //promise.catch(e => console.log(e.message));
     //promise.catch(e => console.log("promise catch, login successfully"));
     //promise.catch(e => window.location = 'home.html');
+    x.style.display = "block";
   });
 
   //add signup event
@@ -30,10 +33,15 @@
     const auth = firebase.auth();
     //sign in
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    database.ref().set({
-        email: email,
-        password: pass,
-      });
+    //const createUser = promise => database.ref().child(`User/${user.uid}`).set(user)
+    //exports.createUser = functions.auth.promise().onCreate(createUser)
+   
+    //writeUserData();
+    //database.ref().set({
+    //    email: email,
+    //    password: pass,
+    //  });
+
     //promise.catch(e => console.log(e.message));
     $("#loginState").append("<br>One user is now signed up!");
     //console.log(firebaseUser.uid)
@@ -56,9 +64,11 @@
 btnLogout.addEventListener("click", e => {
     firebase.auth().signOut();
     console.log("logout clicked");
+    x.style.display = "none";
     //window.location = 'auth.html';
 });
 
+var x = document.getElementById("myDIV");
 
 //add a realtiem lister for auth state change
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -74,11 +84,14 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         //console.log(user);
         //console.log("all login users are " + user);
         //writeUserData(firebaseUser);
+        
+
     } else {
         console.log("state change, Not log in");
         //make logout btn invisiable if user not login
         btnLogout.classList.add("hide");
         $("#loginState").append("<br>One user is now logout!");
+        
 
     }
 });
@@ -100,3 +113,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     // No user is signed in.
   //  console.log("user is not login " + user);
  // }
+
+ //hide an element if user is not login
+ function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }

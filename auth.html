@@ -9,15 +9,12 @@
 </head>
 <body>
 
-
-
-
     <div class="container">
         <input id="txtEmail" type="email" placeholder="Email">
 
         <input id="txtPassword" type="password" placeholder="Password">
 
-        <button id="btnLogin" class="btn btn-action">
+        <button id="btnLogin" class="btn btn-action" onclick="myFunction()">
             Log In
         </button>
 
@@ -25,7 +22,7 @@
             Sign Up
         </button>
 
-        <button id="btnLogout" class="btn btn-action hide">
+        <button id="btnLogout" class="btn btn-action hide" onclick="myFunction()">
             Log Out
         </button>
 
@@ -33,6 +30,11 @@
 
     <div id="loginState"> 
         <p></p>
+    </div>
+
+
+    <div id="myDIV">
+        This is my DIV element.
     </div>
 
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
