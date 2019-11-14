@@ -36,12 +36,15 @@ select{
     color: #333e4f;
     width: 960px;
     height: auto;
-    margin: 40px 0px 40px 60px;
+    /* margin: 40px 0px 40px 60px; */
     padding-right:20px;
     min-height: 100px;
     padding: 10px;
     text-align: left;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
 }
 /* read more styling */
 .read{
@@ -120,5 +123,9 @@ nav h3{
 }
 #txtEmail, #txtPassword{
     width: 550px;
+    margin: 10px;
+}
+/* read more in each article */
+.read{
     margin: 10px;
 }
