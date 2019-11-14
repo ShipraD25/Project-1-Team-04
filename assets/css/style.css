@@ -64,13 +64,13 @@ select{
     font-size: 22px;
     font-family: sans-serif;
 }
-.action-container {
+/* .action-container {
     height: 60px;
     flex: 0 0 auto;
     padding: 0 16px 1px;
     margin-top: 8px;
     position: relative;
-}
+} */
 a{
     height: 20px;
 }
