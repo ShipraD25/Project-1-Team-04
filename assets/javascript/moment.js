@@ -36,7 +36,7 @@ function query(){
             console.log("Brief Description: ", content);
             console.log("Image URL: ",imageUrl)
             var myCol = $('<div class="grow col-sm-3 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
-            var card = $('<div class="card " id="'+i+'col">');
+            var card = $('<div class="card" id="'+i+'col">');
             var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>')
             // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
             var cardBody= $('<div class="card-body">');
@@ -129,3 +129,33 @@ function updateDataToUI(location, weather, temp) {
 window.onload = function() {
   getLocation();
 };
+//Counter to  keep count of number of clicks done by the user.
+
+//counter when user click on any part of the main content
+var clickCounter = 0;
+$("#main-content").on("click", function() {
+// Add to clickCounter
+clickCounter++;
+//  Store Click Data to Firebase in a JSON property called clickCount
+// Note how we are using the Firebase .set() method
+database.ref().set({
+  clickCount: clickCounter
+});
+});
+//counter snapshot codes
+database.ref().on("value", function(snapshot) {
+// Then we console.log the value of snapshot
+console.log(snapshot.val());
+// Update the clickCounter variable with data from the database.
+clickCounter = snapshot.val().clickCount;
+// Then we change the html associated with the number.
+$("#click-value").text(clickCounter);
+// If there is an error that Firebase runs into -- it will be stored in the "errorObject"
+// Again we could have named errorObject anything we wanted.
+}, function(errorObject) {
+// In case of error this will print the error
+console.log("The read failed: " + errorObject.code);
+});
+
+
+
