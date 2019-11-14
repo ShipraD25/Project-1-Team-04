@@ -129,3 +129,6 @@ nav h3{
 .read{
     margin: 10px;
 }
+.weather{
+    display: block;
+}

@@ -113,10 +113,18 @@ function getWeather(lat, long) {
 }
 // update the data from API to DOM
 function updateDataToUI(location, weather, temp) {
-  weatherIcon.innerHTML = `<img src="${weather[0].icon}" />`;
-  weatherCon.innerHTML = weather[0].main;
-  loc.innerHTML = location;
-  temNum.innerHTML = `${temp}`;
+//   weatherIcon.innerHTML = `<img src="${weather[0].icon}" />`;
+//   weatherCon.innerHTML = weather[0].main;
+//   loc.innerHTML = location;
+//   temNum.innerHTML = `${temp}`;
+  weatherImage=$('<div class="weather"><img src="'+ weather[0].icon +'" /></div><br>');
+  weatherTemp= $('<div class="weather">'+ temp + '</div>');
+  weatherLocation= $('<div class="weather">'+ location + '</div>');
+  $('#weather').append(weatherLocation);
+  $('#weather').append(weatherImage);
+  $('#weather').append(weatherTemp);
+  
+
 }
 window.onload = function() {
   getLocation();
