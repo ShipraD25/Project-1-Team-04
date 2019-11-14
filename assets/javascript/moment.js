@@ -129,6 +129,20 @@ function updateDataToUI(location, weather, temp) {
 window.onload = function() {
   getLocation();
 };
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
+    authDomain: "projectone-cbac5.firebaseapp.com",
+    databaseURL: "https://projectone-cbac5.firebaseio.com",
+    projectId: "projectone-cbac5",
+    storageBucket: "projectone-cbac5.appspot.com",
+    messagingSenderId: "31129312771",
+    appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
+};
+  
+    // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 //Counter to  keep count of number of clicks done by the user.
 
 //counter when user click on any part of the main content
