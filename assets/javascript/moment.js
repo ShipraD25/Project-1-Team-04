@@ -1,7 +1,4 @@
 
-// --------------------------------------------------------------------------------------------------------------------------------
-// ----------------------------------------------------------Dimple Code ----------------------------------------------------------
-
 //Populate the home page with headlines
 //Using the headlines query url, this is for only the population of the home page
 var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=10&apiKey=349152e2740748f4b23c31609ae25dae";
