@@ -42,7 +42,28 @@ function query(){
             var cardBody= $('<div class="card-body">');
             var cardTitle = $('<div class="card-title"><h5>'+title+'</h5>')
             var cardText = $ ('<div class="card-text">').text(content);
-            var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a><a href="" class="far fa-share-square"></a></div>');
+            var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a>'+
+            '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">' +
+            '  share' +
+            '</button>' +
+            '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+            '  <div class="modal-dialog" role="document">' +
+            '    <div class="modal-content">' +
+            '      <div class="modal-header">' +
+            '        <h5 class="modal-title" id="exampleModalLabel">Share</h5>' +
+            '      </div>' +
+            '      <div class="modal-body">' +
+            '      <a class="twitter-share-button"href="https://twitter.com/intent/tweet?text=' + newsUrl + '">Tweet</a>' + '<br/>' +
+            '<a href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email">Mail</a></a>' +
+            //'<a href="mailto:?subject=<SUBJECT>&body=<BODY>"target= newsUrl  class="share-btn email">Mail</a>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
+            '</div>' +
+            '</div>');
             card.append(cardHeader);
             // cardHeader.append(cardImage);
             cardHeader.append(cardTitle);
