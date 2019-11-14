@@ -19,7 +19,7 @@ footer {
     font-family: sans-serif;
 }
 /* signin and register specifications */
-.signin, .register, .logOut{
+.signin, .register, .signout{
     padding: 30px;
     color: white;
     font-size: 16px;
@@ -103,4 +103,22 @@ a{
     margin:10px;
     background: white;
     border: none;
+}
+/* footer nav style */
+nav h3{
+    text-align:center;
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+/* login and signup button in loginSignin.html */
+#btnLogin, #btnSignup{
+    background: #29aae2;
+    color: white;
+    border-radius: 6px;
+    margin: 20px;
+}
+#txtEmail, #txtPassword{
+    width: 550px;
+    margin: 10px;
 }

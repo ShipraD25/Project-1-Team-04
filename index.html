@@ -19,6 +19,7 @@
     <!-- tachyons link -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
+    <!-- Firebase References -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
@@ -39,8 +40,10 @@
     default is 5  -->
      <nav class="nav-box">
         <input class="search" placeholder="search">
-        <a class="signin" href="login.html">Sign in</a>
-        <a class="register" href="register.html">Register</a>
+        <a class="signin" href="loginSignin.html">Sign in/Sign up</a>
+        <a class="signout" href="logout.html">Log out</a>
+        
+
         <select> 
             <option value="1">1</option>
             <option value="2">2</option>
@@ -75,30 +78,30 @@
         <h2>Today's top Stories </h2>
     </div>
     <div class="container">
-            <div class="row">
-                <!-- dynamic code generated using javascript -->
-              <div class="grow col-sm-3 col-md-3 col-xs-12 style='position:fixed'">
-                  <div class="card">
-                      
-                    <div class="card-header">
-                        <h3>Weather</h3>
+        <div class="row">
+            <!-- dynamic code generated using javascript -->
+            <div class="grow col-sm-3 col-md-3 col-xs-12 style='position:fixed'">
+                <div class="card">
+                    
+                <div class="card-header">
+                    <h3>Weather</h3>
+                </div>
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>  
+                <div class="card-header">
+                        <h3>Pollen</h3>
                     </div>
                     <div class="card-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
                     </div>  
-                    <div class="card-header">
-                            <h3>Pollen</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                        </div>  
-                  </div>
+                </div>
 
-              </div>
             </div>
-          </div>
+        </div>
+        </div>
           
     <div>
 
@@ -119,27 +122,7 @@
         and  option dropdown to select how many articles should be displayed from 1-15
         default is 5  -->
          <nav class="nav-box">
-            <input class="search" placeholder="search">
-            <a class="signin" href="login.html">Sign in</a>
-        <a class="register" href="register.html">Register</a>
-            <select> 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
-            <button class= "button" type="submit">Submit</button>
+                <h3 style= "text-align:center;">Visitors have clicked on news tiles <span id="click-value" style="color:red;"></span> times!</h3>
         </nav>
     </footer>  
     
