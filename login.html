@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auth with Firebase</title> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <!-- css link -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+  <!-- bootstrap link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <!-- tachyons link -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+</head>
+<body>
+    <header>
+        <!-- animating the header -->
+        <div class="pulse"></div>
+        <!-- nav box has search box, signin or register for the first time which leads to a different page
+        and  option dropdown to select how many articles should be displayed from 1-15
+        default is 5  -->
+        <nav class="nav-box">
+            <div class="logo"> 
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="News Breeze">
+                </a> 
+            </div>
+            <input class="search" id="search" placeholder="search">
+            <a class="signin" href="loginSignin.html">Sign in</a>
+            <a class="signup" href="Signup.html">Sign up</a>
+            <a class="signout" href="logout.html">Log out</a>
+            
+            <button class= "button" id="submit" type="submit">Submit</button>
+        </nav>
+    </header>
+            
+
+    <div class="container">
+        <label class="name"><b>Email</b></label><br>
+        <input id="txtEmail" type="email" placeholder="Email"><br>
+
+        <label class="psw"><b>Password</b></label><br>
+        <input id="txtPassword" type="password" placeholder="Password"><br>
+
+        <button id="btnLogin" class="btn btn-action">
+            Log In
+        </button>
+
+    </div>
+
+    <div id="loginState"> 
+        <p></p>
+    </div>
+
+
+    <!-- <div id="myDIV">
+        <br>
+        <h1 style="padding-left:60px">You are currently not login</h1>
+        <br>
+    </div> -->
+    <!-- footer is same as header -->
+<footer>
+        <!-- Displays the logo in the front page -->
+        <div class="logo1"> 
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div>
+        
+    </footer>  
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
+        authDomain: "projectone-cbac5.firebaseapp.com",
+        databaseURL: "https://projectone-cbac5.firebaseio.com",
+        projectId: "projectone-cbac5",
+        storageBucket: "projectone-cbac5.appspot.com",
+        messagingSenderId: "31129312771",
+        appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
+    };
+      
+        // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+    //make auth and firestore reference
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    //update firestore settings
+    //db.setting({timestampsINSnapshots: true});
+</script>
+<script src="assets/javascript/auth.js"></script>
+</body>
+</html>
