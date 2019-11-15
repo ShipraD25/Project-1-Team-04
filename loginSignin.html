@@ -19,32 +19,27 @@
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 </head>
 <body>
-    <!--trying Jumbutron-->
-
-<div class="jumbotron">
-        <div class="logo"> 
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="News Breeze">
-            </a> 
-        </div>
+    <header>
+        <!-- animating the header -->
+        <div class="pulse"></div>
         <!-- nav box has search box, signin or register for the first time which leads to a different page
         and  option dropdown to select how many articles should be displayed from 1-15
         default is 5  -->
-         <nav class="nav-box">
-            <input class="search" placeholder="search">
+        <nav class="nav-box">
+            <div class="logo"> 
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="News Breeze">
+                </a> 
+            </div>
+            <input class="search" id="search" placeholder="search">
             <a class="signin" href="loginSignin.html">Sign in</a>
             <a class="signin" href="Signup.html">Sign up</a>
             <a class="signout" href="logout.html">Log out</a>
             
-            <button class= "button" type="submit">Submit</button>
+            <button class= "button" id="submit" type="submit">Submit</button>
         </nav>
     </header>
-    <div class="header-ext">
-    <div class="announcement">
-        News Breeze let's you pick the news from specific sites and also share and personalize your favourite articles.
-    </div>
-    </div>
-      </div>
+            
 
     <div class="container">
         <label class="name"><b>Email</b></label><br>

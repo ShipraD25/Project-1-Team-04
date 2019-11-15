@@ -91,8 +91,9 @@ a{
     font-size: 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 30px;
-    background: linear-gradient(#e66465, #9198e5);
-    color: white;
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background:rgb(236, 199, 131);
+    color:black;
     width: 100px;
     border: none;
 
