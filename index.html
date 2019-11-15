@@ -26,21 +26,22 @@
 <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
-
-<!--trying Jumbutron-->
-
-<div class="jumbotron">
-    <div class="logo"> 
-        <a href="index.html">
-            <img src="assets/images/logo.png" alt="News Breeze">
-        </a> 
+    <header>
+    <!-- animating the header -->
+    <div class="pulse">
     </div>
     <!-- nav box has search box, signin or register for the first time which leads to a different page
     and  option dropdown to select how many articles should be displayed from 1-15
     default is 5  -->
      <nav class="nav-box">
+        <div class="logo"> 
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div>
         <input class="search" id="search" placeholder="search">
-        <a class="signin" href="loginSignin.html">Sign in/Sign up</a>
+        <a class="signin" href="loginSignin.html">Sign in</a>
+        <a class="signin" href="Signup.html">Sign up</a>
         <a class="signout" href="logout.html">Log out</a>
         
         <button class= "button" id="submit" type="submit">Submit</button>
@@ -62,7 +63,7 @@
     <div class="container">
         <div class="row" id="main-content">
             <!-- dynamic code generated using javascript -->
-            <div class="col-sm-3 col-md-3 col-xs-12 style='position:fixed'">
+            <div class="col-sm-6 col-md-3 col-xs-12 style='position:fixed'">
                 <div class="card">
                     
                 <div class="card-header">

@@ -35,7 +35,7 @@ function query(){
             console.log("URL: ",newsUrl);
             console.log("Brief Description: ", content);
             console.log("Image URL: ",imageUrl)
-            var myCol = $('<div class="col-sm-3 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
+            var myCol = $('<div class="col-sm-6 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
             var card = $('<div class="card" id="'+i+'col">');
             var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>')
             // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
