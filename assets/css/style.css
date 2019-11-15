@@ -17,6 +17,7 @@ a,img{
     float: left;
     height: 100px;
     margin-right: 50px;
+
 }
 /* search input */
 .search{
@@ -170,4 +171,60 @@ header{
 .nav-box a{
     padding-top: 50px;
     height: 100px;
+}
+/* //modified the modal dimensions */
+.modal .modal-dialog {
+    width: 100px; /* New width for default modal */
+    height: 250px;
+}
+.modal-body{
+    height:100px;
+}
+/* twitter logo dimensions */
+.twitter{
+    width: 50px;
+    height: 50px;
+    padding-bottom: 15px;
+}
+/* email logo dimensions */
+.email{
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+}
+/* change the color based on pollen level in the air */
+.good{
+    background: green;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+}
+.moderate{
+    background: yellow;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.unhealthySen{
+    background: rgb(107, 70, 2);
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+}
+.unhealthy{
+    background: red;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+}
+.veryUnhealthy{
+    background: purple;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
+}
+.hazardous{
+    background: maroon;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: white;
 }

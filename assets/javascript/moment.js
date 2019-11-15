@@ -1,3 +1,34 @@
+//query url for pollen
+
+function callpollen(ip) {
+       
+    var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response){
+        console.log(response)
+        var weatherPollenAQI = response.data.aqi;
+        console.log(weatherPollenAQI);
+        if(weatherPollenAQI <=50){
+             var notes= $('<div class="good">Good</div>');
+         }else if(weatherPollenAQI >50 && weatherPollenAQI <=100){
+             var notes= $('<div class="moderate">Moderate</div>');
+         }else if(weatherPollenAQI >100 && weatherPollenAQI <=150){
+             var notes= $('<div class="unhealthySen">Unhealthy for sensative groups</div>');
+         }else if(weatherPollenAQI >150 && weatherPollenAQI <=200){
+             var notes= $('<div class="unhealthy">Unhealthy</div>');
+         }else if(weatherPollenAQI >200 && weatherPollenAQI <=300){
+             var notes= $('<div class="veryUnhealthy">Very Unhealthy</div>');
+         }else if(weatherPollenAQI >300 && weatherPollenAQI <=500){
+             var notes= $('<div class="hazardous">Hazardous</div>');
+         }
+        $("#pollen").append(JSON.stringify(response.data.aqi));
+        $("#pollen").append(notes);
+        
+    })
+}
+callpollen()
 
 //Populate the home page with headlines
 //Using the headlines query url, this is for only the population of the home page
@@ -42,27 +73,20 @@ function query(){
             var cardBody= $('<div class="card-body">');
             var cardTitle = $('<div class="card-title"><h5>'+title+'</h5>')
             var cardText = $ ('<div class="card-text">').text(content);
-            var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a>'+
+            var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container">'+
             '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">' +
             '  share' +
             '</button>' +
             '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '  <div class="modal-dialog" role="document">' +
-            '    <div class="modal-content">' +
-            '      <div class="modal-header">' +
-            '        <h5 class="modal-title" id="exampleModalLabel">Share</h5>' +
-            '      </div>' +
-            '      <div class="modal-body">' +
-            '      <a class="twitter-share-button"href="https://twitter.com/intent/tweet?text=' + newsUrl + '">Tweet</a>' + '<br/>' +
-            '<a href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email">Mail</a></a>' +
-            //'<a href="mailto:?subject=<SUBJECT>&body=<BODY>"target= newsUrl  class="share-btn email">Mail</a>' +
+            '  <div class="modal-dialog modal-sm" role="document">' +
+            '    <div class="modal-content">' + 
+            '<button type="button" class="btn" data-dismiss="modal"  style=" width: 5px;padding-left:75px;">&times;</button>'+
+             '      <div class="modal-body">' +
+            '      <a class="twitter-share-button" data-count="none" href="https://twitter.com/intent/tweet?text=' + newsUrl + '"><img class="twitter" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"> </a>'+ '<br/>' +
+            '<a class="mail" href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email"><img class="email" src="https://usmarketingsource.com/wp-content/uploads/2018/08/Mail.png"></a>' +
             '</div>' +
-            '<div class="modal-footer">' +
-            '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
-            '      </div>' +
             '    </div>' +
             '  </div>' +
-            '</div>' +
             '</div>');
             card.append(cardHeader);
             // cardHeader.append(cardImage);
