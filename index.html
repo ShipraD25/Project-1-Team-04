@@ -63,7 +63,7 @@
         <div class="row" id="main-content">
             <!-- dynamic code generated using javascript -->
             <div class="col-sm-3 col-md-3 col-xs-12 style='position:fixed'">
-                <div class="card h-100">
+                <div class="card">
                     
                 <div class="card-header">
                     <h3>Weather</h3>
@@ -75,7 +75,10 @@
                         <h3>Pollen</h3>
                     </div>
                     <div class="card-body">
-                        <p><span id="pollen">US Air Quality Index: </span></p>
+                        <p><span id="pollen-1">CO: </span></p>
+                        <p><span id="pollen-2">PM 10: </span></p>
+                        <p><span id="pollen-3">PM 2.5: </span></p>
+                        <!-- <p><span id="pollen-4">SO2: </span></p> -->
                         
                     </div>  
                 </div>
@@ -134,23 +137,36 @@
     firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
     //make auth and firestore reference
-    const auth = firebase.auth();
+    const auth = firebase.auth();    
     const db = firebase.firestore();
     //update firestore settings
     //db.setting({timestampsINSnapshots: true});
 
+    
+
+
     function callpollen(ip) {
        
-       var queryURL = "https://api.airvisual.com/v2/nearest_city?key=0a56ca0d-5be4-4c4e-9081-bf8dceb7dd2f";
+       var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
        $.ajax({
            url: queryURL,
            method: "GET"
        }).then(function (response){
            console.log(response)
-           var weatherPollen = response.data.current.pollution;
-           console.log(weatherPollen);
+           var weatherPollenCo = response.data.iaqi.co.v;
+           var weatherPollenPm10 = response.data.iaqi.pm10.v;
+           var weatherPollenPm25 = response.data.iaqi.pm25.v;
+           //var weatherPollenSo2 = response.data.iaqi.pm.so2;
+           console.log(weatherPollenCo);
+           console.log(weatherPollenPm10);
+           console.log(weatherPollenPm25);
+           //console.log(weatherPollenSo2);
 
-           $("#pollen").append(JSON.stringify(response.data.current.pollution.aqius));
+
+           $("#pollen-1").append(JSON.stringify(response.data.iaqi.co.v));
+           $("#pollen-2").append(JSON.stringify(response.data.iaqi.pm10.v));
+           $("#pollen-3").append(JSON.stringify(response.data.iaqi.pm25.v));
+           //$("#pollen-4").append(JSON.stringify(response.data.iaqi.pm.so2));
        })
    }
    callpollen()
