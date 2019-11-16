@@ -17,15 +17,18 @@
       crossorigin="anonymous"
     />
     <!-- twitter script -->
-<script async src="https://platform.twitter.com/widgets.js" charset="UTF-8"></script>
-    <!-- tachyons link -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/> -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="UTF-8"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Firebase References -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
     <header>
@@ -37,22 +40,33 @@
                 <img src="assets/images/logo.png" alt="News Breeze">
             </a> 
         </div>
-    <!-- nav box has search box, signin or register for the first time which leads to a different page
-    and  option dropdown to select how many articles should be displayed from 1-15
-    default is 5  -->
-     <nav class="nav-box">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+            
+        <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         
-        <input class="search" id="search" placeholder="search">
-        <a class="signin" href="login.html">Sign in</a>
-        <a class="signup" href="Signup.html">Sign up</a>
-        <a class="signout" href="logout.html">Log out</a>
-        
-        <button class= "button" id="submit" type="submit">Submit</button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link signin" href="login.html">Sign in</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link signup" href="Signup.html">Sign up</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link signout" href="logout.html">Logout</a>
+                </li>
+                <li>
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
+                </li>
+                <li>
+                    <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
-
-
-
   
 <!-- main content of the news breeze page-->
 <div class="stories">
