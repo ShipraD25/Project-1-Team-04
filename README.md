@@ -8,6 +8,8 @@ JAVASCRIPT
 Jquery
 moment (firebase database)
 
+Project link [a link](https://shiprad25.github.io/Project-1-Team-04/)
+
 Html header
 '''
 <div class="jumbotron">
@@ -127,4 +129,84 @@ function(response){
     const auth = firebase.auth();
     const db = firebase.firestore();
     '''
-Shipra
+
+    query url for pollen
+    ...
+function callpollen(ip) {
+       
+    var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response){
+        console.log(response)
+        var weatherPollenAQI = response.data.aqi;
+        console.log(weatherPollenAQI);
+        if(weatherPollenAQI <=50){
+             var notes= $('<div class="good">Good</div>');
+         }else if(weatherPollenAQI >50 && weatherPollenAQI <=100){
+             var notes= $('<div class="moderate">Moderate</div>');
+         }else if(weatherPollenAQI >100 && weatherPollenAQI <=150){
+             var notes= $('<div class="unhealthySen">Unhealthy for sensative groups</div>');
+         }else if(weatherPollenAQI >150 && weatherPollenAQI <=200){
+             var notes= $('<div class="unhealthy">Unhealthy</div>');
+         }else if(weatherPollenAQI >200 && weatherPollenAQI <=300){
+             var notes= $('<div class="veryUnhealthy">Very Unhealthy</div>');
+         }else if(weatherPollenAQI >300 && weatherPollenAQI <=500){
+             var notes= $('<div class="hazardous">Hazardous</div>');
+         }
+        $("#pollen").append(JSON.stringify(response.data.aqi));
+        $("#pollen").append(notes);
+        
+    })
+}
+...
+
+weather
+...
+const loc = document.getElementById("location");
+const temNum = document.getElementById("temperature-num");
+const temScale = document.getElementById("temperature-scale");
+const weatherCon = document.getElementById("weather-condition");
+const weatherIcon = document.getElementById("weather-icon");
+// get location
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      getWeather(position.coords.latitude, position.coords.longitude);
+    });
+  } else {
+    loc.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+// get weather data according to the location
+function getWeather(lat, long) {
+  const root = "https://fcc-weather-api.glitch.me/api/current?";
+  fetch(`${root}lat=${lat}&lon=${long}`, { method: "get" })
+    .then(resp => resp.json())
+    .then(data => {
+      updateDataToUI(data.name, data.weather, data.main.temp);
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+}
+// update the data from API to DOM
+function updateDataToUI(location, weather, temp) {
+//   weatherIcon.innerHTML = `<img src="${weather[0].icon}" />`;
+//   weatherCon.innerHTML = weather[0].main;
+//   loc.innerHTML = location;
+//   temNum.innerHTML = `${temp}`;
+  weatherImage=$('<div class="weather"><img src="'+ weather[0].icon +'" /></div><br>');
+  weatherTemp= $('<div class="weather">'+ temp + '</div>');
+  weatherLocation= $('<div class="weather">'+ location + '</div>');
+  $('#weather').append(weatherLocation);
+  $('#weather').append(weatherImage);
+  $('#weather').append(weatherTemp);
+  
+
+}
+window.onload = function() {
+  getLocation();
+};
+...
