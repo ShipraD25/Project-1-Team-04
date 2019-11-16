@@ -10,6 +10,7 @@ function callpollen(ip) {
         console.log(response)
         var weatherPollenAQI = response.data.aqi;
         console.log(weatherPollenAQI);
+        //Different ranges for AQI (air quality index)
         if(weatherPollenAQI <=50){
              var notes= $('<div class="good">Good</div>');
          }else if(weatherPollenAQI >50 && weatherPollenAQI <=100){
@@ -68,6 +69,7 @@ function query(){
             console.log("Image URL: ",imageUrl)
             var myCol = $('<div class="col-sm-6 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
             var card = $('<div class="card" id="'+i+'col">');
+            // image appended to the card
             var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>')
             // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
             var cardBody= $('<div class="card-body">');
@@ -75,17 +77,24 @@ function query(){
             var cardText = $ ('<div class="card-text">').text(content);
             var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container">'+
             '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">' +
-            'share' +
+            '  share' +
             '</button>' +
             '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '<div class="modal-dialog modal-sm" role="document">' +
-            '<div class="modal-content">' + 
-            '<button type="button" class="btn" data-dismiss="modal"  style=" width: 5px;padding-left:75px;">&times;</button>'+
-            '<div class="modal-body">' +
-            '<a class="twitter-share-button" data-count="none" href="https://twitter.com/intent/tweet?text=' + newsUrl + '"><img class="twitter" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"> </a>'+ '<br/>' +
-            '<a class="mail" href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email"><img class="email" src="https://usmarketingsource.com/wp-content/uploads/2018/08/Mail.png"></a>' +
+            '  <div class="modal-dialog" role="document">' +
+            '    <div class="modal-content">' +
+            '      <div class="modal-header">' +
+            '        <h5 class="modal-title" id="exampleModalLabel">Share</h5>' +
+            '      </div>' +
+            '      <div class="modal-body">' +
+            '      <a class="twitter-share-button"href="https://twitter.com/intent/tweet?text=' + newsUrl + '">Tweet</a>' + '<br/>' +
+            '<a href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email">Mail</a></a>' +
+            //'<a href="mailto:?subject=<SUBJECT>&body=<BODY>"target= newsUrl  class="share-btn email">Mail</a>' +
             '</div>' +
-            '</div>' +
+            '<div class="modal-footer">' +
+            '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
             '</div>' +
             '</div>');
             card.append(cardHeader);
@@ -142,13 +151,12 @@ function updateDataToUI(location, weather, temp) {
 //   loc.innerHTML = location;
 //   temNum.innerHTML = `${temp}`;
   weatherImage=$('<div class="weather"><img src="'+ weather[0].icon +'" /></div><br>');
-  weatherTemp= $('<div class="weather">'+ temp + '</div>');
+  weatherTemp= $('<div class="weather">'+ temp + ' &#8451</div>');
   weatherLocation= $('<div class="weather">'+ location + '</div>');
   $('#weather').append(weatherLocation);
   $('#weather').append(weatherImage);
   $('#weather').append(weatherTemp);
   
-
 }
 window.onload = function() {
   getLocation();
