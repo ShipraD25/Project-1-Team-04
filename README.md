@@ -11,63 +11,28 @@ If you don't like what you see,use our search and preferences options to get the
 It also gives you updates about the local weather.
 
 
-Technologies used:
+## Technologies used:
 HTML
 CSS
 BOOTSTRAP
 JAVASCRIPT
 Jquery
-moment (firebase database)
+Firebase for database and authentication
 
 Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
-Html header
+
+# News Breeze Logo
 '''html
-<div class="jumbotron">
+
     <div class="logo"> 
         <a href="index.html">
             <img src="assets/images/logo.png" alt="News Breeze">
         </a> 
     </div>
-    <!-- nav box has search box, signin or register for the first time which leads to a different page
-    and  option dropdown to select how many articles should be displayed from 1-15
-    default is 5  -->
-     <nav class="nav-box">
-        <input class="search" placeholder="search">
-        <a class="signin" href="loginSignin.html">Sign in/Sign up</a>
-        <a class="signout" href="logout.html">Log out</a>
-        
-        <button class= "button" type="submit">Submit</button>
-    </nav>
-</header>
-<div class="header-ext">
-<div class="announcement">
-    News Breeze let's you pick the news from specific sites and also share and personalize your favourite articles.
-</div>
-</div>
-  </div>
-  '''
-
-  html footer
-  ,,,html
-  <footer>
-        <!-- Displays the logo in the front page -->
-        <div class="logo"> 
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="News Breeze">
-            </a> 
-        </div>
-        <!-- nav box has search box, signin or register for the first time which leads to a different page
-        and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  -->
-         <nav class="nav-box">
-                <h3 style= "text-align:center;">Visitors have clicked on news tiles <span id="click-value" style="color:red;"></span> times!</h3>
-        </nav>
-    </footer>  
     '''
-
-    the code for on click of submit button
-    '''
+# The code for on click of submit button
+   '''javascript
     // on click of submit button function will check the search parameters and results is displayed in the page
     $("#submit").click(function(){
         var search = $("#search").val().trim();
@@ -79,10 +44,9 @@ Html header
     });
 '''
 
-function code that generates dynamic columns
+# Function code that generates dynamic columns
 '''
 function(response){
-
         var results = response.articles;
         console.log(results);
         for(var i =0;i<results.length;i++){
@@ -91,17 +55,34 @@ function(response){
             var content = results[i].description; //brief description of the news
             var newsUrl = results[i].url; //link to the news on the news site
             var imageUrl = results[i].urlToImage; //link to the news image;
-            console.log("URL: ",newsUrl);
-            console.log("Brief Description: ", content);
-            console.log("Image URL: ",imageUrl)
             var myCol = $('<div class="grow col-sm-3 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
             var card = $('<div class="card " id="'+i+'col">');
-            var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>')
-            // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
+            var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>'
             var cardBody= $('<div class="card-body">');
             var cardTitle = $('<div class="card-title"><h5>'+title+'</h5>')
             var cardText = $ ('<div class="card-text">').text(content);
-            var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container"><a href="" class="far fa-bookmark"></a><a href="" class="far fa-share-square"></a></div>');
+             var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container">'+
+            '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal'+ i +'">' +
+            '  share' +
+            '</button>' +
+            '<div class="modal fade" id="exampleModal'+ i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+            '  <div class="modal-dialog" role="document">' +
+            '    <div class="modal-content">' +
+            '      <div class="modal-header">' +
+            '        <h5 class="modal-title" id="exampleModalLabel">Share</h5>' +
+            '      </div>' +
+            '      <div class="modal-body">' +
+            '      <a class="twitter-share-button"href="https://twitter.com/intent/tweet?text=' + newsUrl + '">Tweet</a>' + '<br/>' +
+            '<a href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email">Mail</a></a>' +
+            //'<a href="mailto:?subject=<SUBJECT>&body=<BODY>"target= newsUrl  class="share-btn email">Mail</a>' +
+            '</div>' +
+            '<div class="modal-footer">' +
+            '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
+            '</div>' +
+            '</div>');
             card.append(cardHeader);
             // cardHeader.append(cardImage);
             cardHeader.append(cardTitle);
@@ -120,6 +101,7 @@ function(response){
             })
         }
     });
+}
     '''
     code to initalizing firebase.
     '''
@@ -131,9 +113,7 @@ function(response){
         storageBucket: "projectone-cbac5.appspot.com",
         messagingSenderId: "31129312771",
         appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
-    };
-      
-        // Initialize Firebase
+    };        
     firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
     //make auth and firestore reference
@@ -141,7 +121,7 @@ function(response){
     const db = firebase.firestore();
     '''
 
-query url for pollen
+# Query url for pollen
 
     ```javascript
  
@@ -154,28 +134,12 @@ query url for pollen
         console.log(response)
         var weatherPollenAQI = response.data.aqi;
         console.log(weatherPollenAQI);
-        if(weatherPollenAQI <=50){
-             var notes= $('<div class="good">Good</div>');
-         }else if(weatherPollenAQI >50 && weatherPollenAQI <=100){
-             var notes= $('<div class="moderate">Moderate</div>');
-         }else if(weatherPollenAQI >100 && weatherPollenAQI <=150){
-             var notes= $('<div class="unhealthySen">Unhealthy for sensative groups</div>');
-         }else if(weatherPollenAQI >150 && weatherPollenAQI <=200){
-             var notes= $('<div class="unhealthy">Unhealthy</div>');
-         }else if(weatherPollenAQI >200 && weatherPollenAQI <=300){
-             var notes= $('<div class="veryUnhealthy">Very Unhealthy</div>');
-         }else if(weatherPollenAQI >300 && weatherPollenAQI <=500){
-             var notes= $('<div class="hazardous">Hazardous</div>');
-         }
         $("#pollen").append(JSON.stringify(response.data.aqi));
-        $("#pollen").append(notes);
-        
+        $("#pollen").append(notes);   
     })
 }
-```
-
-weather
-
+'''
+# Weather
 ``` javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
@@ -193,7 +157,7 @@ function getLocation() {
   }
 }
 ```
- get weather data according to the location
+ # Get weather data according to the location
  ```javascript
 function getWeather(lat, long) {
   const root = "https://fcc-weather-api.glitch.me/api/current?";
@@ -208,23 +172,57 @@ function getWeather(lat, long) {
 }
 // update the data from API to DOM
 function updateDataToUI(location, weather, temp) {
-//   weatherIcon.innerHTML = `<img src="${weather[0].icon}" />`;
-//   weatherCon.innerHTML = weather[0].main;
-//   loc.innerHTML = location;
-//   temNum.innerHTML = `${temp}`;
   weatherImage=$('<div class="weather"><img src="'+ weather[0].icon +'" /></div><br>');
   weatherTemp= $('<div class="weather">'+ temp + '</div>');
   weatherLocation= $('<div class="weather">'+ location + '</div>');
   $('#weather').append(weatherLocation);
   $('#weather').append(weatherImage);
-  $('#weather').append(weatherTemp);
-  
-
+  $('#weather').append(weatherTemp);  
 }
 window.onload = function() {
   getLocation();
 };
 ```
+# Sign In
+'''javascript
+btnLogin.addEventListener("click", e => {
+    //get email and password
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    //sign in
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    
+  });
+  '''
+  # Sign UP
+  '''javascript
+  btnSignup.addEventListener("click", e => {
+    //get email and password
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    //sign in
+    const promise = auth.createUserWithEmailAndPassword(email, pass); 
+    $("#loginState").html("<br>One user is now signed up!");      
+});
+'''
+# Authentication
+'''javasript
+var x = document.getElementById("myDIV");
+
+//add a realtiem lister for auth state change
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        $("#loginState").html("<br>user is now login!");
+        setTimeout(function () {
+          window.location.href = "./index.html";}, 2000); //will call the function after 2 secs.
+        console.log(firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION));
+    } else {
+        $("#loginState").html("<br>");
+    }
+});
+
 # Challenges faced
 
 Modals because of their fixed position.
@@ -232,3 +230,11 @@ Modals because of their fixed position.
 Dynamic database creation after authentication.
 
 Code integration.
+
+# Lessons Learned
+- Integration and regression testing to be done consistently
+- Better research on some topics
+- More modular code
+- Responsive design could be better
+- Make the presentation sharper
+
