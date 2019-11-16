@@ -1,9 +1,10 @@
 # Project-1-Team-04
+![Giphygif](1.gif)
+
 Technologies used:
 HTML
 CSS
 BOOTSTRAP
-TACHYONS
 JAVASCRIPT
 Jquery
 moment (firebase database)
