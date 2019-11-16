@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auth with Firebase</title> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <!-- css link -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+  <!-- bootstrap link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <!-- tachyons link -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+</head>
+<body>
+    <header>
+        <!-- animating the header -->
+        <div class="pulse"></div>
+        <div class="logo"> 
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div>
+        <!-- navbar for signin, signout and signup links with search input and submit button -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link signin" href="login.html">Sign in</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link signup" href="Signup.html">Sign up</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link signout" href="logout.html">Logout</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 ">
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
+                
+                    <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
+                </form>
+                
+            </div>
+        </nav>
+    </header>      
+    <!-- email and password input label for login  with login button and a invisible signup button-->
+    <div class="container">
+        <label class="name"><b>Email</b></label><br>
+        <input id="txtEmail" type="email" placeholder="Email"><br>
+        <label class="psw"><b>Password</b></label><br>
+        <input id="txtPassword" type="password" placeholder="Password"><br>
+        <button id="btnLogin" class="btn btn-action">Log In</button>
+        <button id="btnSignup" class="btn btn-secondary invisible">Sign Up</button>
+    </div>
+    <!-- check the login state -->
+    <div id="loginState"> 
+        <p></p>
+    </div>
+    <!-- change the state and reference to the main page with a delay of 2 sec -->
+    <div id="myDIV">
+        <br>
+        <h1 style="padding-left:60px"></h1>
+        <br>
+    </div>
+    <!-- footer is same as header -->
+    <footer>
+         <!-- Displays the logo in the footer section and refer to index.html on click -->
+        <div class="logo1"> 
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div>
+        
+    </footer>  
+    <!-- script to firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
+            authDomain: "projectone-cbac5.firebaseapp.com",
+            databaseURL: "https://projectone-cbac5.firebaseio.com",
+            projectId: "projectone-cbac5",
+            storageBucket: "projectone-cbac5.appspot.com",
+            messagingSenderId: "31129312771",
+            appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
+        };
+        
+            // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        //make auth and firestore reference
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script src="assets/javascript/auth.js"></script>
+</body>
+</html>

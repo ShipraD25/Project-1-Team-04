@@ -60,7 +60,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         //btnLogout.classList.add("hide");
         x.style.display = "none";
         //y.style.display = "block";
-        $("#loginState").html("<br>user is now logout!");
+        $("#loginState").html("<br>");
 
     }
 });
