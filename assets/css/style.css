@@ -9,13 +9,13 @@
     left: 45%;
 }
 /* nav bar */
-.signin, .signup, .signout{
+/* .signin, .signup, .signout{
     color: white;
     margin-top: 40px;
     font-size: 20px;
     font-family: sans-serif;
-}
-#submit, #search{
+} */
+/* #submit, #search{
     color: white;
     margin-top: 20px;
     font-size: 20px;
@@ -28,7 +28,7 @@
      
     width: 150px;
     margin-top: 40px;
-}
+} */
 /* aniamting the header image for index.html, signup.html,login.html*/
 header{
     margin: 0;
@@ -73,13 +73,9 @@ header{
 /* main news display in the page */
 .stories{
     background: #f1f3f5;
-    text-align: center;
     color: #333e4f;
-    width: 960px;
     height: auto;
-    padding-right:20px;
     min-height: 100px;
-    padding: 10px;
     text-align: left;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
