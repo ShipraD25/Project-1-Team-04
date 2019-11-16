@@ -22,22 +22,40 @@
     <header>
         <!-- animating the header -->
         <div class="pulse"></div>
-        <!-- nav box has search box, signin or register for the first time which leads to a different page
-        and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  -->
-        <nav class="nav-box">
-            <div class="logo"> 
+        <div class="logo"> 
                 <a href="index.html">
                     <img src="assets/images/logo.png" alt="News Breeze">
                 </a> 
             </div>
-            <input class="search" id="search" placeholder="search">
-            <a class="signin" href="loginSignin.html">Sign in</a>
-            <a class="signup" href="Signup.html">Sign up</a>
-            <a class="signout" href="logout.html">Log out</a>
+        <!-- nav box has search box, signin or register for the first time which leads to a different page
+        and  option dropdown to select how many articles should be displayed from 1-15
+        default is 5  -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
             
-            <button class= "button" id="submit" type="submit">Submit</button>
-        </nav>
+                <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link signin" href="login.html">Sign in</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link signup" href="Signup.html">Sign up</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link signout" href="logout.html">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
+                    
+                        <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+            </nav>
     </header>
             
 
@@ -50,6 +68,9 @@
 
         <button id="btnLogin" class="btn btn-action">
             Log In
+        </button>
+        <button id="btnSignup" class="btn btn-secondary invisible">
+            Sign Up
         </button>
 
     </div>
