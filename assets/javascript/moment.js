@@ -75,18 +75,18 @@ function query(){
             var cardText = $ ('<div class="card-text">').text(content);
             var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container">'+
             '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">' +
-            '  share' +
+            'share' +
             '</button>' +
             '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
-            '  <div class="modal-dialog modal-sm" role="document">' +
-            '    <div class="modal-content">' + 
+            '<div class="modal-dialog modal-sm" role="document">' +
+            '<div class="modal-content">' + 
             '<button type="button" class="btn" data-dismiss="modal"  style=" width: 5px;padding-left:75px;">&times;</button>'+
-             '      <div class="modal-body">' +
-            '      <a class="twitter-share-button" data-count="none" href="https://twitter.com/intent/tweet?text=' + newsUrl + '"><img class="twitter" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"> </a>'+ '<br/>' +
+            '<div class="modal-body">' +
+            '<a class="twitter-share-button" data-count="none" href="https://twitter.com/intent/tweet?text=' + newsUrl + '"><img class="twitter" src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"> </a>'+ '<br/>' +
             '<a class="mail" href="mailto:?subject=' + title + '&body=' + newsUrl + '"target="_blank" class="share-btn email"><img class="email" src="https://usmarketingsource.com/wp-content/uploads/2018/08/Mail.png"></a>' +
             '</div>' +
-            '    </div>' +
-            '  </div>' +
+            '</div>' +
+            '</div>' +
             '</div>');
             card.append(cardHeader);
             // cardHeader.append(cardImage);

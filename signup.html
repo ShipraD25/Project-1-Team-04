@@ -23,55 +23,44 @@
         <!-- animating the header -->
         <div class="pulse"></div>
         <div class="logo"> 
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="News Breeze">
-                </a> 
-            </div>
-        <!-- nav box has search box, signin or register for the first time which leads to a different page
-        and  option dropdown to select how many articles should be displayed from 1-15
-        default is 5  -->
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="News Breeze">
+            </a> 
+        </div>
+        <!-- nav box has search box, signin or register -->
         <nav class="navbar navbar-expand-lg navbar-dark">
-            
-                <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link signin" href="login.html">Sign in</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link signup" href="Signup.html">Sign up</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link signout" href="logout.html">Logout</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 ">
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
                 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link signin" href="login.html">Sign in</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link signup" href="Signup.html">Sign up</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link signout" href="logout.html">Logout</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0 ">
-                        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
+                    <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
+                </form>
                     
-                        <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
-                    </form>
-                    
-                </div>
-            </nav>
+            </div>
+        </nav>
     </header>
             
-
     <div class="container">
         <label class="name"><b>Email</b></label><br>
         <input id="txtEmail" type="email" placeholder="Email"><br>
-
         <label class="psw"><b>Password</b></label><br>
         <input id="txtPassword" type="password" placeholder="Password"><br>
-        <button id="btnSignup" class="btn btn-secondary">
-            Sign Up
-        </button>
-        <button id="btnLogin" class="btn btn-secondary invisible">
-            Log In
-        </button>
-
+        <button id="btnSignup" class="btn btn-secondary">Sign Up</button>
+        <button id="btnLogin" class="btn btn-secondary invisible">Log In</button>
     </div>
 
     <div id="loginState"> 
@@ -81,11 +70,11 @@
 
     <div id="myDIV">
         <br>
-        <h1 style="padding-left:60px">You are currently not login</h1>
+        <h1 style="padding-left:60px"></h1>
         <br>
     </div>
     <!-- footer is same as header -->
-<footer>
+    <footer>
         <!-- Displays the logo in the front page -->
         <div class="logo1"> 
             <a href="index.html">
@@ -95,31 +84,31 @@
         
     </footer>  
 
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-<script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
-        authDomain: "projectone-cbac5.firebaseapp.com",
-        databaseURL: "https://projectone-cbac5.firebaseio.com",
-        projectId: "projectone-cbac5",
-        storageBucket: "projectone-cbac5.appspot.com",
-        messagingSenderId: "31129312771",
-        appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
-    };
-      
-        // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    var database = firebase.database();
-    //make auth and firestore reference
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-    //update firestore settings
-    //db.setting({timestampsINSnapshots: true});
-</script>
-<script src="assets/javascript/auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
+            authDomain: "projectone-cbac5.firebaseapp.com",
+            databaseURL: "https://projectone-cbac5.firebaseio.com",
+            projectId: "projectone-cbac5",
+            storageBucket: "projectone-cbac5.appspot.com",
+            messagingSenderId: "31129312771",
+            appId: "1:31129312771:web:8a5072bcf95acf7dfcf836"
+        };
+        
+            // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+        //make auth and firestore reference
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        //update firestore settings
+        //db.setting({timestampsINSnapshots: true});
+    </script>
+    <script src="assets/javascript/auth.js"></script>
 </body>
 </html>

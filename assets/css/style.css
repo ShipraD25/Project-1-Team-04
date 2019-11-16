@@ -1,38 +1,14 @@
 /* ---------------------index.html------------------- */
- /* header */
-
-
-
-
-
-/* header and footer tag */
-footer {
-    width: 100%;
-    position: absolute;
-    height: 150px;
-    margin-top: 40px;
-    background: linear-gradient(135deg,#29aae2,#1b4ea1);
-}
+ /* header  for index.html, signup.html,login.html*/
 /* image logo dimensions */
 .logo img{
     position: absolute;
     height: 200px;
     width: 200px;
-    top: 25%;
-    left: 40%;
+    top: 15%;
+    left: 45%;
 }
-.logo1 img{
-    
-    height: 200px;
-    width: 200px;
-    
-}
-a,img{
-    float: left;
-    height: 100px;
-    margin-right: 50px;
-}
-
+/* nav bar */
 .signin, .signup, .signout{
     color: white;
     margin-top: 40px;
@@ -53,87 +29,18 @@ a,img{
     width: 150px;
     margin-top: 40px;
 }
-
-/* user option */
-select{
-   margin: 20px;
-}
-/* main news display in the page */
-.stories{
-    background: #f1f3f5;
-    text-align: center;
-    color: #333e4f;
-    width: 960px;
-    height: auto;
-    padding-right:20px;
-    min-height: 100px;
-    padding: 10px;
-    text-align: left;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 100%;
-    margin: 0 auto;
-    clear: both;
-}
-/* read more styling */
-.read{
-    color: #12737a;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-}
-.article{
-    width: 50px;
-    height: 50px;
-}
-a{
-    height: 20px;
-}
-.title-box{
-    text-align: center;
-    margin-bottom: 30px;
-}
-/* styling the cards */
-.card{
-    margin:10px;
-    background: white;
-    border: none;
-}
-/* footer nav style */
-nav h3{
-    text-align:center;
-    padding-top: 70px;
-    font-size: 1.5em;
-    color: white;
-}
-/* login and signup button in loginSignin.html */
-#btnLogin, #btnSignup{
-    background: #29aae2;
-    color: white;
-    border-radius: 6px;
-    margin: 20px;
-}
-#txtEmail, #txtPassword{
-    width: 550px;
-    margin: 10px;
-}
-/* read more in each article */
-.read{
-    margin: 10px;
-}
-.weather{
-    display: block;
-}
-/* aniamting the header image*/
+/* aniamting the header image for index.html, signup.html,login.html*/
 header{
     margin: 0;
     padding: 0;
-    height: 400px;
+    height: 300px;
     background: url(../images/bg.jpg);
     background-size: cover;
     animation: animateBg 60s linear infinite;
 }
 .pulse{
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
@@ -161,6 +68,99 @@ header{
     }
 }
  
+/* main body of the index.html */
+
+/* main news display in the page */
+.stories{
+    background: #f1f3f5;
+    text-align: center;
+    color: #333e4f;
+    width: 960px;
+    height: auto;
+    padding-right:20px;
+    min-height: 100px;
+    padding: 10px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+}
+.title-box{
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* read more styling  in each article*/
+.read{
+    color: #12737a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 10px;
+}
+/* styling the cards */
+.card{
+    margin:10px;
+    background: white;
+    border: none;
+}
+/* weather card in index.html  */
+.weather{
+    display: block;
+}
+/*  footer tag */
+footer {
+    width: 100%;
+    position: absolute;
+    height: 150px;
+    margin-top: 40px;
+    background: linear-gradient(135deg,#29aae2,#1b4ea1);
+}
+/* footer nav style */
+nav h3{
+    text-align:center;
+    padding-top: 70px;
+    font-size: 1.5em;
+    color: white;
+}
+/* footer image */
+.logo1 img{
+    float: left;
+    height: 200px;
+    width: 200px;
+    
+}
+/* a,img{
+    
+    height: 100px;
+    margin-right: 50px;
+} */
+
+
+/* .article{
+    width: 50px;
+    height: 50px;
+} */
+a{
+    height: 20px;
+}
+
+
+
+/* login and signup button in login.html signup.html */
+#btnLogin, #btnSignup{
+    background: #29aae2;
+    color: white;
+    border-radius: 6px;
+    margin: 20px;
+}
+/* body for login.html signup.html */
+#txtEmail, #txtPassword{
+    width: 550px;
+    margin: 10px;
+}
+
+
+/* modal styling in index.html for each article */
 /* //modified the modal dimensions */
     
 .modal .modal-dialog {
