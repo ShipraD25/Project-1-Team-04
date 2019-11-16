@@ -23,16 +23,16 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
 
 # News Breeze Logo
-'''html
+```html
 
     <div class="logo"> 
         <a href="index.html">
             <img src="assets/images/logo.png" alt="News Breeze">
         </a> 
     </div>
-    '''
+    ```
 # The code for on click of submit button
-   '''jquery
+   ```jquery
     // on click of submit button function will check the search parameters and results is displayed in the page
     $("#submit").click(function(){
         var search = $("#search").val().trim();
@@ -42,7 +42,7 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
         $(".row").empty();
         query();
     });
-'''
+```
 
 # Function code that generates dynamic columns
 '''jquery
