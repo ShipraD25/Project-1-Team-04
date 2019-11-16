@@ -20,25 +20,60 @@
   />
 </head>
 <body>
+        <header>
+            <!-- animating the header -->
+            <div class="pulse"></div>
+            <div class="logo"> 
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="News Breeze">
+                </a> 
+            </div>
+            <!-- navbar for signin, signout and signup links with search input and submit button -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> 
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link signin" href="login.html">Sign in</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link signup" href="signup.html">Sign up</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link signout" href="logout.html">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search">
+                    
+                        <button class="btn  my-2 my-sm-0" id="submit" type="submit">Submit</button>
+                    </form>
+                    
+                </div>
+            </nav>
+        </header>      
 
-    <div class="container">
+
+        <div class="container">
         
-        <button id="btnLogout" class="btn btn-action">
-            Log Out
-        </button>
+            <button id="btnLogout" class="btn btn-action">
+                Log Out
+            </button>
 
-    </div>
+        </div>
 
-    <div id="loginState"> 
-        <p></p>
-    </div>
+        <div id="loginState"> 
+            <p></p>
+        </div>
 
 
-    <div id="myDIV">
-        <br>
-        <h1 style="padding-left:60px"></h1>
-        <br>
-    </div>
+        <div id="myDIV">
+            <br>
+            <h1 style="padding-left:60px"></h1>
+            <br>
+        </div>
     <!-- footer is same as header -->
 <footer>
     <!-- Displays the logo in the front page -->
