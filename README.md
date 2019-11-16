@@ -2,7 +2,7 @@
 ![Giphygif](1.gif)
 
 # Summary
-
+Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
 Our project is a online news aggregator.
 News Breeze will be a single stop for all your news requirements to accompany your coffee. 
@@ -12,15 +12,22 @@ It also gives you updates about the local weather.
 
 
 ## Technologies used:
-HTML
-CSS
-BOOTSTRAP
-JAVASCRIPT
-Jquery
-Firebase for database and authentication
+- HTML
+- CSS
+- BOOTSTRAP
+- JAVASCRIPT
+- Jquery
+- Firebase for database and authentication
 
-Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
-
+## Tools Used
+- Github for code repo and integration
+- Zoom for stand up and read block resolution
+- Google Docs for collating information
+- Google Slides for presentation
+- Slack for team communication
+- VS Code as IDE
+- Giphy for generating gifs
+- LICEcap for gifs
 
 ## News Breeze Logo
 ```html
