@@ -9,13 +9,13 @@
     left: 45%;
 }
 /* nav bar */
-/* .signin, .signup, .signout{
+.signin, .signup, .signout{
     color: white;
     margin-top: 40px;
     font-size: 20px;
     font-family: sans-serif;
-} */
-/* #submit, #search{
+} 
+ #submit, #search{
     color: white;
     margin-top: 20px;
     font-size: 20px;
@@ -25,10 +25,10 @@
     padding-top: 50px;
 }
 #search{
-     
+    color: black;
     width: 150px;
     margin-top: 40px;
-} */
+}
 /* aniamting the header image for index.html, signup.html,login.html*/
 header{
     margin: 0;
