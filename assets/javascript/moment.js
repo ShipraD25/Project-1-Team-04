@@ -76,10 +76,10 @@ function query(){
             var cardTitle = $('<div class="card-title"><h5>'+title+'</h5>')
             var cardText = $ ('<div class="card-text">').text(content);
             var readMore = $('<div><span class="read"><a class= "read" href="'+newsUrl+'">Read more..</a></span></div><div class="action-container">'+
-            '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">' +
+            '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal'+ i +'">' +
             '  share' +
             '</button>' +
-            '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+            '<div class="modal fade" id="exampleModal'+ i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
             '  <div class="modal-dialog" role="document">' +
             '    <div class="modal-content">' +
             '      <div class="modal-header">' +
