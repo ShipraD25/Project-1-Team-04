@@ -9,7 +9,7 @@ Jquery
 moment (firebase database)
 
 Html header
-'''
+'''html
 <div class="jumbotron">
     <div class="logo"> 
         <a href="index.html">
@@ -36,7 +36,7 @@ Html header
   '''
 
   html footer
-  ,,,
+  ,,,html
   <footer>
         <!-- Displays the logo in the front page -->
         <div class="logo"> 
