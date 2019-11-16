@@ -10,6 +10,7 @@ function callpollen(ip) {
         console.log(response)
         var weatherPollenAQI = response.data.aqi;
         console.log(weatherPollenAQI);
+        //Different ranges for AQI (air quality index)
         if(weatherPollenAQI <=50){
              var notes= $('<div class="good">Good</div>');
          }else if(weatherPollenAQI >50 && weatherPollenAQI <=100){
@@ -68,6 +69,7 @@ function query(){
             console.log("Image URL: ",imageUrl)
             var myCol = $('<div class="col-sm-6 col-md-3 col-xs-12" id="col'+i+'"></div>'); //make a column
             var card = $('<div class="card" id="'+i+'col">');
+            // image appended to the card
             var cardHeader = $('<div class="card-header"><img src="'+imageUrl+'" class="card-img-top"></div>')
             // var cardImage = $('<img src="'+imageUrl+'" class="card-img-top" style="height:20px;width:10px;"><br>')
             var cardBody= $('<div class="card-body">');
@@ -149,7 +151,7 @@ function updateDataToUI(location, weather, temp) {
 //   loc.innerHTML = location;
 //   temNum.innerHTML = `${temp}`;
   weatherImage=$('<div class="weather"><img src="'+ weather[0].icon +'" /></div><br>');
-  weatherTemp= $('<div class="weather">'+ temp   + '&#8451</div>');
+  weatherTemp= $('<div class="weather">'+ temp + ' &#8451</div>');
   weatherLocation= $('<div class="weather">'+ location + '</div>');
   $('#weather').append(weatherLocation);
   $('#weather').append(weatherImage);
