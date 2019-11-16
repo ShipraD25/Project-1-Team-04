@@ -32,7 +32,7 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
     </div>
     '''
 # The code for on click of submit button
-   '''javascript
+   '''jquery
     // on click of submit button function will check the search parameters and results is displayed in the page
     $("#submit").click(function(){
         var search = $("#search").val().trim();
@@ -45,7 +45,7 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 '''
 
 # Function code that generates dynamic columns
-'''
+'''jquery
 function(response){
         var results = response.articles;
         console.log(results);
@@ -123,7 +123,7 @@ function(response){
 
 # Query url for pollen
 
-    ```javascript
+    '''javascript
  
  function callpollen(ip) {
        var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
@@ -140,7 +140,7 @@ function(response){
 }
 '''
 # Weather
-``` javascript
+'''javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
 const temScale = document.getElementById("temperature-scale");
@@ -156,9 +156,9 @@ function getLocation() {
     loc.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-```
+'''
  # Get weather data according to the location
- ```javascript
+ '''javascript
 function getWeather(lat, long) {
   const root = "https://fcc-weather-api.glitch.me/api/current?";
   fetch(`${root}lat=${lat}&lon=${long}`, { method: "get" })
@@ -182,7 +182,7 @@ function updateDataToUI(location, weather, temp) {
 window.onload = function() {
   getLocation();
 };
-```
+'''
 # Sign In
 '''javascript
 btnLogin.addEventListener("click", e => {
