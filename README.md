@@ -8,7 +8,7 @@ JAVASCRIPT
 Jquery
 moment (firebase database)
 
-Project link [a link](https://shiprad25.github.io/Project-1-Team-04/)
+Link to project [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
 Html header
 '''
