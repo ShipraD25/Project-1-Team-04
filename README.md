@@ -8,7 +8,7 @@ JAVASCRIPT
 Jquery
 moment (firebase database)
 
-Link to project [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
+Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
 Html header
 '''
@@ -131,8 +131,8 @@ function(response){
     '''
 
     query url for pollen
-    ...
-function callpollen(ip) {
+    ```
+ function callpollen(ip) {
        
     var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
     $.ajax({
@@ -160,10 +160,10 @@ function callpollen(ip) {
         
     })
 }
-...
+```
 
 weather
-...
+```
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
 const temScale = document.getElementById("temperature-scale");
@@ -209,4 +209,4 @@ function updateDataToUI(location, weather, temp) {
 window.onload = function() {
   getLocation();
 };
-...
+```
