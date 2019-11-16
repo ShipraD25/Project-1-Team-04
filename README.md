@@ -22,7 +22,7 @@ Firebase for database and authentication
 Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 
 
-# News Breeze Logo
+## News Breeze Logo
 ```html
 
     <div class="logo"> 
@@ -30,8 +30,8 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
             <img src="assets/images/logo.png" alt="News Breeze">
         </a> 
     </div>
-    ```
-# The code for on click of submit button
+```
+## The code for on click of submit button
    ```jquery
     // on click of submit button function will check the search parameters and results is displayed in the page
     $("#submit").click(function(){
@@ -44,7 +44,7 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
     });
 ```
 
-# Function code that generates dynamic columns
+## Function code that generates dynamic columns
 ```jquery
 function(response){
         var results = response.articles;
@@ -136,7 +136,7 @@ function(response){
     })
 }
 ```
-# Weather
+## Weather
 ```javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
@@ -154,7 +154,7 @@ function getLocation() {
   }
 }
 ```
- # Get weather data according to the location
+ ## Get weather data according to the location
 ```javascript
 function getWeather(lat, long) {
   const root = "https://fcc-weather-api.glitch.me/api/current?";
@@ -180,7 +180,7 @@ window.onload = function() {
   getLocation();
 };
 ```
-# Sign In
+## Sign In
 ```javascript
 btnLogin.addEventListener("click", e => {
     //get email and password
@@ -192,7 +192,7 @@ btnLogin.addEventListener("click", e => {
     
   });
 ```
-  # Sign UP
+  ## Sign UP
   ```javascript
   btnSignup.addEventListener("click", e => {
     //get email and password
@@ -204,7 +204,7 @@ btnLogin.addEventListener("click", e => {
     $("#loginState").html("<br>One user is now signed up!");      
 });
 ```
-# Authentication
+## Authentication
 ```javasript
 var x = document.getElementById("myDIV");
 
@@ -220,7 +220,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
 });
 ```
-# Challenges faced
+## Challenges faced
 
 Modals because of their fixed position.
 
@@ -228,7 +228,7 @@ Dynamic database creation after authentication.
 
 Code integration.
 
-# Lessons Learned
+## Lessons Learned
 - Integration and regression testing to be done consistently
 - Better research on some topics
 - More modular code
