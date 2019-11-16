@@ -1,6 +1,16 @@
 # Project-1-Team-04
 ![Giphygif](1.gif)
 
+# Summary
+
+
+Our project is a online news aggregator.
+News Breeze will be a single stop for all your news requirements to accompany your coffee. 
+It will provide top headlines from multiple news outlets and sources, when you visit our site. 
+If you don't like what you see,use our search and preferences options to get the news tailored to your requirements.
+It also gives you updates about the local weather.
+
+
 Technologies used:
 HTML
 CSS
@@ -130,11 +140,13 @@ function(response){
     const auth = firebase.auth();
     const db = firebase.firestore();
     '''
+
 query url for pollen
-    ```
+
+    ```javascript
+ 
  function callpollen(ip) {
-       
-    var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
+       var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -163,6 +175,7 @@ query url for pollen
 ```
 
 weather
+
 ``` javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
@@ -179,7 +192,9 @@ function getLocation() {
     loc.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-// get weather data according to the location
+```
+ get weather data according to the location
+ ```javascript
 function getWeather(lat, long) {
   const root = "https://fcc-weather-api.glitch.me/api/current?";
   fetch(`${root}lat=${lat}&lon=${long}`, { method: "get" })
@@ -210,3 +225,10 @@ window.onload = function() {
   getLocation();
 };
 ```
+# Challenges faced
+
+Modals because of their fixed position.
+
+Dynamic database creation after authentication.
+
+Code integration.
