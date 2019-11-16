@@ -45,7 +45,7 @@ Link to project - [News Breeze](https://shiprad25.github.io/Project-1-Team-04/)
 ```
 
 # Function code that generates dynamic columns
-'''jquery
+```jquery
 function(response){
         var results = response.articles;
         console.log(results);
@@ -101,10 +101,7 @@ function(response){
             })
         }
     });
-}
-    '''
-    code to initalizing firebase.
-    '''
+}   
     var firebaseConfig = {
         apiKey: "AIzaSyCo4xVWn7Ypizk-6VB6XjTeb2ewiqaryic",
         authDomain: "projectone-cbac5.firebaseapp.com",
@@ -119,11 +116,11 @@ function(response){
     //make auth and firestore reference
     const auth = firebase.auth();
     const db = firebase.firestore();
-    '''
+    ```
 
 # Query url for pollen
 
-    '''javascript
+    ```javascript
  
  function callpollen(ip) {
        var queryURL = "https://api.waqi.info/feed/here/?token=12f820d56fa3fd40bd4af15eae5097c9875e7bc5";
@@ -138,9 +135,9 @@ function(response){
         $("#pollen").append(notes);   
     })
 }
-'''
+```
 # Weather
-'''javascript
+```javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
 const temScale = document.getElementById("temperature-scale");
@@ -156,9 +153,9 @@ function getLocation() {
     loc.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-'''
+```
  # Get weather data according to the location
- '''javascript
+```javascript
 function getWeather(lat, long) {
   const root = "https://fcc-weather-api.glitch.me/api/current?";
   fetch(`${root}lat=${lat}&lon=${long}`, { method: "get" })
@@ -182,9 +179,9 @@ function updateDataToUI(location, weather, temp) {
 window.onload = function() {
   getLocation();
 };
-'''
+```
 # Sign In
-'''javascript
+```javascript
 btnLogin.addEventListener("click", e => {
     //get email and password
     const email = txtEmail.value;
@@ -194,9 +191,9 @@ btnLogin.addEventListener("click", e => {
     const promise = auth.signInWithEmailAndPassword(email, pass);
     
   });
-  '''
+```
   # Sign UP
-  '''javascript
+  ```javascript
   btnSignup.addEventListener("click", e => {
     //get email and password
     const email = txtEmail.value;
@@ -206,9 +203,9 @@ btnLogin.addEventListener("click", e => {
     const promise = auth.createUserWithEmailAndPassword(email, pass); 
     $("#loginState").html("<br>One user is now signed up!");      
 });
-'''
+```
 # Authentication
-'''javasript
+```javasript
 var x = document.getElementById("myDIV");
 
 //add a realtiem lister for auth state change
@@ -222,7 +219,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $("#loginState").html("<br>");
     }
 });
-
+```
 # Challenges faced
 
 Modals because of their fixed position.
