@@ -163,7 +163,7 @@ function(response){
 ```
 
 weather
-```
+``` javascript
 const loc = document.getElementById("location");
 const temNum = document.getElementById("temperature-num");
 const temScale = document.getElementById("temperature-scale");
