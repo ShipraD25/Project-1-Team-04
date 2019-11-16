@@ -27,7 +27,7 @@
                 <img src="assets/images/logo.png" alt="News Breeze">
             </a> 
         </div>
-        <!-- nav box has search box, signin or register -->
+       <!-- navbar for signin, signout and signup links with search input and submit button -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <button class="navbar-toggler toggle " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
             </div>
         </nav>
     </header>
-            
+         <!-- email and password input label for login  with signup button and a invisible login button-->       
     <div class="container">
         <label class="name"><b>Email</b></label><br>
         <input id="txtEmail" type="email" placeholder="Email"><br>
@@ -62,12 +62,12 @@
         <button id="btnSignup" class="btn btn-secondary">Sign Up</button>
         <button id="btnLogin" class="btn btn-secondary invisible">Log In</button>
     </div>
-
+    <!-- check the login state -->
     <div id="loginState"> 
         <p></p>
     </div>
 
-
+    <!-- change the state and reference to the main page with a delay of 2 sec -->
     <div id="myDIV">
         <br>
         <h1 style="padding-left:60px"></h1>
@@ -75,7 +75,7 @@
     </div>
     <!-- footer is same as header -->
     <footer>
-        <!-- Displays the logo in the front page -->
+         <!-- Displays the logo in the footer section and refer to index.html on click -->
         <div class="logo1"> 
             <a href="index.html">
                 <img src="assets/images/logo.png" alt="News Breeze">
@@ -83,7 +83,7 @@
         </div>
         
     </footer>  
-
+    <!-- script to firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
